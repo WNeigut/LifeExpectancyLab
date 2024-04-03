@@ -1,0 +1,45 @@
+
+<html>
+<head>
+  <title>Life Expectancy Lab</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <h1>Life Expectancy Lab - Wyatt Neigut</h1>
+  <h2>Graph: Life Expectancy Per Country (1960-2020)</h2>
+
+  <div id="line_graph_all">
+    {% include 'line_graph.svg' %}
+  </div>
+
+  <div>
+    <form action="/" method="GET">
+      <label for="year">Choose a year:</label><br>
+      <select name="year" id="year_select">
+        {%for i in range(1960,2021)%}
+        <option value="{{i}}">{{i}}</option>
+        {%endfor%}
+
+      </select>
+
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <div>
+    <form action="/year" method="GET">
+      <label for="year">Choose a year and see the Map</label><br>
+      <select name="year" id="year_select">
+        {%for i in range(1960,2021)%}
+        <option value="{{i}}">{{i}}</option>
+        {%endfor%}
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+
+  <footer>
+    All data from <a href="https://data.worldbank.org/indicator/SP.DYN.LE00.IN?locations=MX-US-CA"> The World Bank</a>.
+  </footer>
+</body>
+</html>

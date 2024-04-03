@@ -1,0 +1,63 @@
+body{
+  background-color: lightseagreen
+}
+
+svg{
+  border-style: solid;
+  border-width: 1px;
+}
+
+line{
+ stroke:black;
+ stroke-width: 2.5
+}
+.average:hover{
+stroke:red
+
+}
+.data:hover{
+  stroke:red;
+  stroke-width: 2.5
+}
+
+.turn{
+  transform:rotate(-90deg);
+  font-weight:bold
+}
+
+.tick{
+  stroke:black;
+  stroke-width:3
+}
+
+.Canada{
+  fill:lightgreen;
+  stroke-width: 3
+}
+
+.United_States{
+  fill:green;
+  stroke-width: 3
+}
+
+.Mexico{
+  fill:darkgreen;
+  stroke-width: 3
+}
+
+.darkblue{
+  color:darkgreen
+}
+
+.cyan{
+  color:lightgreen
+}
+
+.blue{
+color:green
+}
+
+.label{
+  font-size: medium;
+  font-style: italic;
+}

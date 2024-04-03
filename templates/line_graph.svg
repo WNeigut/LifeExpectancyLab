@@ -1,0 +1,37 @@
+
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 500" width="600" height="500">
+
+     <line class= "ax" x1 ="80" y1 = "410" x2 = "450" y2 = "410"/>
+     <text class = "turn" x = "-200" y = "15" text-anchor="middle">Life Expectancy (years)</text>
+     <line class= "ax" x1 ="80" y1 = "410" x2 = "80" y2 = "10"/>
+     <text class = "text" x = "80" y = "430" text-anchor="middle"> Start of Selected Year</text>
+     <text class = "text" x = "450" y = "430" text-anchor="middle"> End of Selected Year</text>
+
+     {%for c in range(10,410,40)%}
+
+     <line class = "tick" x1 = "60" y1 = {{c + 5}} x2 = "80" y2 = {{c + 5}} />
+
+     <text x = "45" y = {{c+10}} text-anchor="middle"> {{100-(c-10)/4}}</text>
+
+     {%endfor%}
+          {%set total = 0%}
+     {%for country in data%}
+          {%for year in country%}
+               {total += data[country][year]}
+          {%endfor%}
+     {%endfor%}
+     {%set average = 74.51195365850002%}
+
+     <line class= "average" x1 ="80" y1 = {{410-4*(average)}} x2 = "450" y2 = {{410-4*((average))}} />
+     <text class = "label" x = "475" y = {{410-4*((average))}} text-anchor="right"> Universal Mean</text>
+
+     <line class = "data" x1 = "80" y1 = {{410- 4*(data["Mexico"][year])}} x2 = "430" y2 = {{410- 4*(data["Mexico"][year])}}></line>
+     <text class = "label" x = "475" y = {{410- 4*(data["Mexico"][year])}} text-anchor="right"> Mexico </text>
+
+     <line class = "data" x1 = "80" y1 = {{410- 4*(data["United States"][year])}} x2 = "430" y2 = {{410- 4*(data["United States"][year])}}> </line>
+     <text class = "label" x = "475" y = {{410- 4*(data["United States"][year])}} text-anchor="right"> United States </text>
+
+     <line class = "data" x1 = "80" y1 = {{410- 4*(data["Canada"][year])}} x2 = "430" y2 = {{410- 4*(data["Canada"][year])}}></line>
+     <text class = "label" x = "475" y = {{410- 4*(data["Canada"][year])}} text-anchor="right"> Canada </text>
+
+</svg>
